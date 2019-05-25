@@ -23,14 +23,12 @@ export default class Slide {
 		}
 		this.wrapper.addEventListener(movetype, this.onMove);
 		this.transition(false);
-		console.log('iniciou');
 	}
 
 	onMove(event) {
 		const pointer = event.type === 'mousemove' ? event.clientX : event.changedTouches[0].clientX;
 		const finalPosition = this.updatePosition(pointer);
 		this.moveSlide(finalPosition);
-		console.log('moveu');
 	}
 
 	onEnd(event) {
@@ -39,7 +37,6 @@ export default class Slide {
 		this.dist.finalPosition = this.dist.movePosition;
 		this.transition(true);
 		this.changeSlideOnEnd();
-		console.log('encerrou');
 	}
 
 	onResize() {
